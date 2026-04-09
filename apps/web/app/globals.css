@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+@theme {
+  /* Nightfall Dark Theme */
+  --color-nf-bg: #08090d;
+  --color-nf-surface: #0f1117;
+  --color-nf-elevated: #171923;
+  --color-nf-border: #1e2130;
+  --color-nf-border-subtle: #151822;
+
+  --color-nf-text: #e4e4e7;
+  --color-nf-text-heading: #ffffff;
+  --color-nf-text-muted: #71717a;
+  --color-nf-text-dim: #52525b;
+
+  --color-nf-violet: #8b5cf6;
+  --color-nf-violet-light: #a78bfa;
+  --color-nf-violet-dark: #6d28d9;
+  --color-nf-cyan: #22d3ee;
+  --color-nf-amber: #fbbf24;
+  --color-nf-orange: #f97316;
+
+  /* Light sections */
+  --color-nf-light-bg: #fafafa;
+  --color-nf-light-surface: #f4f4f5;
+  --color-nf-light-text: #18181b;
+  --color-nf-light-muted: #71717a;
+  --color-nf-light-border: #e4e4e7;
+
+  /* Fonts */
+  --font-heading: "Clash Display", "Inter", system-ui, sans-serif;
+  --font-body: "General Sans", "Inter", system-ui, sans-serif;
+  --font-mono: "Fira Code", ui-monospace, monospace;
+
+  /* Sidebar width */
+  --spacing-sidebar: 260px;
+  --spacing-toc: 220px;
+
+  /* Wordmark gradient start (dark theme: white, light theme: dark) */
+  --nf-wm-start: #f4f4f5;
+}
+
+/* ===== Light Theme Overrides ===== */
+:root[data-theme="light"],
+.light {
+  --color-nf-bg: #fafafa;
+  --color-nf-surface: #ffffff;
+  --color-nf-elevated: #f4f4f5;
+  --color-nf-border: #e4e4e7;
+  --color-nf-border-subtle: #f0f0f2;
+
+  --color-nf-text: #3f3f46;
+  --color-nf-text-heading: #18181b;
+  --color-nf-text-muted: #71717a;
+  --color-nf-text-dim: #a1a1aa;
+
+  --color-nf-violet: #7c3aed;
+  --color-nf-violet-light: #8b5cf6;
+  --color-nf-violet-dark: #5b21b6;
+  --color-nf-cyan: #0891b2;
+  --color-nf-amber: #d97706;
+  --color-nf-orange: #ea580c;
+
+  --color-nf-light-bg: #fafafa;
+  --color-nf-light-surface: #f4f4f5;
+  --color-nf-light-text: #18181b;
+  --color-nf-light-muted: #71717a;
+  --color-nf-light-border: #e4e4e7;
+
+  --nf-wm-start: #18181b;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-nf-bg);
+    color: var(--color-nf-text);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-nf-text-heading);
+    font-weight: 700;
+  }
+
+  code, pre {
+    font-family: var(--font-mono);
+  }
+
+  ::selection {
+    background-color: rgba(139, 92, 246, 0.3);
+    color: #ffffff;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-nf-border);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-nf-text-dim);
+  }
+
+  /* Theme transition — only applied during toggle via .nf-transitioning class */
+  .nf-transitioning,
+  .nf-transitioning *,
+  .nf-transitioning *::before,
+  .nf-transitioning *::after {
+    transition: background-color 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                border-color 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.05s,
+                color 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.1s,
+                box-shadow 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                fill 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.1s,
+                stroke 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.1s,
+                opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1) !important;
+  }
+}
+
+/* Fonts */
+@font-face {
+  font-family: "Clash Display";
+  src: url("https://cdn.fontshare.com/wf/RVFLLKVSZBVXLK3VX6KZOMGBADLA7MXROHA57PDWPB4JIA3DSLZQ/IPQZP7EMFKDZ3LP5N3ZH6DBTXI3YPSYKJ6SVPTFWOLSJ3RSMQXBA/CLASHDISPLAY-BOLD.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Clash Display";
+  src: url("https://cdn.fontshare.com/wf/I5EDSSGMDVHB3LIL4A34FN6OGAYQV2DSYAP3D3WFNDLPQNKJCXFQ/D6KPH6MKGY5HI3L7T4HFEVXWF4JRXZD4YMKDPLGCPMSJTFQAUJBA/CLASHDISPLAY-SEMIBOLD.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("https://cdn.fontshare.com/wf/OXBMF7UNJRHITJLZXJXQTV5AX3QHS6OB/R5HWWNR24JHHDN7CEPWWRRDG4KAV4OOL/LTG5OABPUVAVDFSJUQIXRDPHBQ3CNCVK.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("https://cdn.fontshare.com/wf/SUQLKJL6KIQSD6NLWYLZDMYUNROXDURV/QGDAQP7DAFBV6OOPIAV5BLTYZUPHIFXC/SGLRH5K75ND7VEPX2KM6DG7DMLTWULGI.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
