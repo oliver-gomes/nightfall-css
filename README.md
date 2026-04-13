@@ -1,5 +1,6 @@
 <p align="center">
-  <img src="nightfall_bidirectional_variants.svg" alt="Nightfall CSS" width="1000" />
+ <img width="1200" height="200" alt="Nightfall" src="https://github.com/user-attachments/assets/b0dee599-ab28-4436-a77a-ef611020684c" />
+
 </p>
 
 # nightfall-css
